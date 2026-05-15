@@ -258,4 +258,4 @@ This template was extracted from the thesis "*A physics of contemplative phenome
 
 ## License
 
-MIT — use freely, modify freely, no warranty. See [`LICENSE`](LICENSE).
+[CC0 1.0 Universal](LICENSE) — public domain dedication. Use freely, no attribution required.
