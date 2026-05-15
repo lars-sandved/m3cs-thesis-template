@@ -16,11 +16,31 @@ A LaTeX template for PhD theses produced at the **Monash Centre for Consciousnes
 - A pre-set **chapter heading style**, page geometry (with binding offset), and one-and-a-half line spacing per Monash convention
 - Sensible **`.gitignore`** for LaTeX projects
 
-## Quick start
+## Getting started
+
+> **Do not work on this repo directly.** Make your own copy first, write your thesis there, and only come back to this repo to contribute *template improvements* via pull request. See [Contributing back](#contributing-back-improvements-to-the-template) below.
+
+### Step 1: Make your own thesis repo
+
+Two routes — pick whichever you prefer:
+
+**Option A — "Use this template" (recommended for most students)**
+
+1. Go to the [repo page](https://github.com/lars-sandved/m3cs-thesis-template).
+2. Click the green **"Use this template"** button (top right) → **Create a new repository**.
+3. Name it something like `my-phd-thesis`, choose **Private** if you want it private, click **Create repository**.
+
+You now have your own independent repo with the template content as the initial commit. It is **not a fork** — there is no upstream relationship to clutter PRs, and you can keep it private without touching the template.
+
+**Option B — Fork**
+
+Use this if you want to easily contribute template improvements back later (forks make PR workflow simpler), and you don't mind the upstream relationship being visible. Click **Fork** instead of **Use this template**.
+
+### Step 2: Pull it down locally and compile
 
 ```bash
-git clone https://github.com/lars-sandved/m3cs-thesis-template.git my-thesis
-cd my-thesis
+git clone https://github.com/YOUR-USERNAME/my-phd-thesis.git
+cd my-phd-thesis
 latexmk -pdf main.tex
 ```
 
@@ -32,28 +52,24 @@ You should get a compiled `main.pdf` with placeholder content. Then:
 4. **Add your bib entries** to `thesis.bib`
 5. **Drop figures** into `figures/`
 
-## Using the template with Overleaf
+## Using your thesis repo with Overleaf
 
-Two routes, in order of convenience:
+### Importing from GitHub
 
-### Option 1 — Import directly from GitHub (recommended)
-
-Overleaf can clone a public GitHub repo into a new project in one click:
+Overleaf can clone a public (or private, with a paid plan) GitHub repo into a new project in one click:
 
 1. Sign in to [Overleaf](https://www.overleaf.com).
 2. From the project list page, click **New Project → Import from GitHub**.
-3. Paste the repo URL: `https://github.com/lars-sandved/m3cs-thesis-template`
-4. Click **Import to Overleaf**. The repo will appear as a new Overleaf project.
+3. Paste **your own repo's URL** (e.g. `https://github.com/YOUR-USERNAME/my-phd-thesis`), not this template's URL.
+4. Click **Import to Overleaf**. Your thesis appears as a new Overleaf project.
 
-The advantage of this route is that Overleaf keeps the link to GitHub. You can pull updates from GitHub and push your own changes back from Overleaf's project menu (**Menu → GitHub → Push to / Pull from GitHub**).
+Overleaf keeps the link to GitHub. You can push and pull from **Menu → GitHub → Push to / Pull from GitHub**. This is the cleanest setup: write in Overleaf, version-control on GitHub.
 
-If you'd rather decouple your thesis from this template entirely (most students will), fork the repo on GitHub first, then import your fork into Overleaf.
+### Alternative — upload a zip
 
-### Option 2 — Upload as a zip
+If you don't want GitHub in the loop:
 
-If you don't want GitHub in the loop at all:
-
-1. From the repo page, click **Code → Download ZIP**.
+1. From your repo page, click **Code → Download ZIP**.
 2. On Overleaf, click **New Project → Upload Project** and select the zip.
 
 ### Overleaf project settings
@@ -74,9 +90,19 @@ If citations show up as `[?]` after a first compile, click the arrow next to **R
 
 ### Tips
 
-- **Track changes with co-authors**: Overleaf's track changes feature is paid-only. If you want free track changes, use the GitHub workflow (Option 1) and use pull requests on your fork.
-- **Sharing**: from **Menu → Share**, you can invite supervisors as collaborators. Free Overleaf accounts allow one collaborator per project; paid accounts allow more.
-- **Backups**: even on Overleaf, periodically push to GitHub. Overleaf's history feature is limited on free accounts.
+- **Sharing with supervisors**: from **Menu → Share**, invite collaborators by email. Free Overleaf accounts allow one collaborator per project; paid accounts allow more.
+- **Backups**: even on Overleaf, periodically push to your GitHub repo. Overleaf's history feature is limited on free accounts.
+- **Track changes**: Overleaf's track changes is paid-only. If you want free track changes, use the GitHub workflow and review changes via pull requests on your own repo.
+
+## Contributing back: improvements to the template
+
+If you spot something the template should do better, or discover a workflow worth sharing with future M3CS students, please **send a pull request to this repo**:
+
+1. Fork [`lars-sandved/m3cs-thesis-template`](https://github.com/lars-sandved/m3cs-thesis-template).
+2. Make your improvement on a branch in your fork.
+3. Open a PR against `main` of this template repo.
+
+**Please don't push your thesis content here.** This repo is meant to stay a clean, generic template. Bugfixes, better defaults, new sections of the README, additional comments explaining a tricky bit of LaTeX — all welcome. Specific thesis content — not.
 
 ## File layout
 
