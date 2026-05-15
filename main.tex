@@ -83,16 +83,16 @@
 ]{biblatex}
 \addbibresource{thesis.bib}
 
-% Allow biblatex to break long URLs/DOIs across lines (lower penalty = more
-% eager to break). Prevents overfull \hbox in the bibliography from entries
-% with long urls or DOIs.
-\setcounter{biburlnumpenalty}{100}
-\setcounter{biburllcpenalty}{100}
-\setcounter{biburlucpenalty}{100}
+% Allow biblatex to break long URLs/DOIs across lines. 7000/8000 is a mild
+% penalty (default is 9000) — eager enough to avoid overfull \hbox at
+% \printbibliography, gentle enough not to leave underfull stretched lines.
+\setcounter{biburlnumpenalty}{7000}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
-% Last-resort slack for paragraphs that won't break cleanly (bibliography
-% entries, long inline urls). Applied document-wide.
-\setlength{\emergencystretch}{3em}
+% Last-resort slack for paragraphs that won't break cleanly. 1.5em is enough
+% for stubborn bibliography entries without making body lines visibly loose.
+\setlength{\emergencystretch}{1.5em}
 
 % --- Hyperlinks (load late) --------------------------------------------------
 \usepackage[hidelinks,breaklinks=true]{hyperref}
@@ -103,6 +103,12 @@
 \titleformat{\chapter}[display]
   {\normalfont\Large\bfseries}
   {\chaptertitlename\ \thechapter}{14pt}{\LARGE}
+
+% Ragged-right \section headings: prevents underfull \hbox warnings when a
+% long section title wraps onto a second short line that would otherwise be
+% stretched to the full line measure.
+\titleformat{\section}
+  {\normalfont\Large\bfseries\raggedright}{\thesection}{1em}{}
 
 % --- Table of contents styling -----------------------------------------------
 \usepackage{tocloft}
