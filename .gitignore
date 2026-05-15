@@ -1,0 +1,54 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ps
+
+# Compiled PDF (uncomment if you don't want to track the compiled output)
+# main.pdf
+
+# Build directory
+build/
+out/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Source files (keep these)
+!*.tex
+!*.bib
+!*.cls
+!*.sty
+
+# Personal notes (not tracked in repo)
+notes/

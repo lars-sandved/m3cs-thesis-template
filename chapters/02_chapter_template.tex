@@ -1,0 +1,103 @@
+% =============================================================================
+% Chapter template (rename this file to e.g. 02_first_paper.tex)
+% -----------------------------------------------------------------------------
+% This file shows the structure of a typical paper-chapter in a Monash
+% thesis-by-publication. The conventional structure is:
+%
+%   1. \chapter{...} title
+%   2. \chaptermark{...} (short title for running header)
+%   3. \label{...} for cross-referencing
+%
+%   4. \section*{Linking text} — a short bridging essay (1,500–3,000 words)
+%      that situates this chapter in the thesis's overall argument and
+%      connects it to the chapter before and after. Linking texts are
+%      examiner-facing, written in the thesis's first-person voice.
+%      Not part of the published paper.
+%
+%   5. \section*{Abstract} — copied verbatim from the published paper
+%   6. \section{Introduction} — the published paper begins here
+%   7. ... rest of the paper as published
+%
+% NOTE: For unpublished or in-progress chapters, omit the abstract and
+% structure the chapter as a standalone piece.
+% =============================================================================
+
+\chapter{Your chapter title}
+\chaptermark{Short title for running header}
+\label{ch:chapter-template}
+
+\section*{Linking text}
+
+% The linking text bridges from the previous chapter to this one. A typical
+% structure:
+%   - Brief summary of what the previous chapter established
+%   - Statement of the new question this chapter takes up
+%   - Explanation of why this is the next move in the thesis's arc
+%   - Brief preview of what this chapter will do
+%
+% Aim for ~2,000 words. The linking texts are where examiners will look
+% to assess whether the thesis hangs together as a coherent whole rather
+% than a collection of papers.
+
+[The chapter that just concluded ... the natural next question is ... this
+chapter takes up ... and proceeds as follows ...]
+
+\clearpage
+
+\section*{Abstract}
+
+% If this chapter is a published paper, paste the abstract verbatim.
+% Add a keywords line below if the published version had one.
+
+[Abstract of the published paper goes here.]
+
+\textbf{Keywords:} keyword1; keyword2; keyword3.
+
+\clearpage
+
+\section{Introduction}
+\label{sec:chapter-template-intro}
+
+[The published paper begins here.]
+
+\section{Methods}
+\label{sec:chapter-template-methods}
+
+[Methods section.]
+
+\section{Results}
+\label{sec:chapter-template-results}
+
+[Results section. Reference figures with \Cref{fig:example-figure} and
+tables with \Cref{tab:example-table}.]
+
+% Figure example. Place image files in figures/ and reference by filename.
+% Use [htbp] (here, top, bottom, page) for flexible placement.
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.7\linewidth]{example_figure.png}
+%     \caption{Caption goes here. Make captions self-explanatory; the
+%     reader should be able to understand the figure without referring
+%     back to the text.}
+%     \label{fig:example-figure}
+% \end{figure}
+
+% Table example.
+% \begin{table}[htbp]
+%     \centering
+%     \begin{tabular}{lrr}
+%         \toprule
+%         Condition & Mean & SD \\
+%         \midrule
+%         A & 1.23 & 0.45 \\
+%         B & 6.78 & 0.91 \\
+%         \bottomrule
+%     \end{tabular}
+%     \caption{Table caption.}
+%     \label{tab:example-table}
+% \end{table}
+
+\section{Discussion}
+\label{sec:chapter-template-discussion}
+
+[Discussion section.]

@@ -1,0 +1,156 @@
+% =============================================================================
+% M3CS PhD Thesis Template
+% Monash Centre for Consciousness and Contemplative Studies
+% -----------------------------------------------------------------------------
+% This is a template for PhD theses produced at M3CS, Monash University.
+% It is configured for the Monash thesis-by-publication format and follows
+% standard Monash thesis requirements (declaration page, AI-use disclosure,
+% etc.) as of 2026.
+%
+% Quick start:
+%   1. Update the \thesistitle / \thesisauthor / \thesisyear macros below
+%   2. Fill in the frontmatter files in frontmatter/
+%   3. Replace the chapter skeletons in chapters/ with your own
+%   4. Add your bibliography entries to thesis.bib
+%   5. Compile with:    latexmk -pdf main.tex
+%      or in Overleaf:  set "main.tex" as the main document
+%
+% File layout:
+%   main.tex                       — preamble + document structure
+%   thesis.bib                     — bibliography database
+%   frontmatter/titlepage.tex      — title page
+%   frontmatter/copyright.tex      — copyright statement
+%   frontmatter/abstract.tex       — thesis abstract
+%   frontmatter/publications.tex   — publications during enrolment
+%   frontmatter/declaration.tex    — thesis-by-publication declaration
+%   frontmatter/acknowledgements.tex
+%   chapters/01_introduction.tex   — and so on...
+%   chapters/NN_conclusion.tex
+%   figures/                       — all images
+% =============================================================================
+
+\documentclass[12pt,a4paper,oneside,openright]{book}
+
+% --- Encoding & fonts --------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}                 % Latin Modern (Computer Modern, refined)
+\usepackage{microtype}               % subtle typographic refinements
+
+% --- Layout ------------------------------------------------------------------
+\usepackage[a4paper,margin=2.5cm,bindingoffset=1cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing                      % Monash thesis convention
+\usepackage{emptypage}               % suppresses headers/page numbers on blank pages
+
+% --- Maths -------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}                % \mathscr (calligraphic script)
+\usepackage{braket}                  % \ket{} / \bra{} (quantum notation)
+
+% --- Lists -------------------------------------------------------------------
+\usepackage{enumitem}                % flexible list formatting
+
+% --- Graphics & figures ------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}}            % all figures in figures/ subdirectory
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{float}                   % the [H] float specifier (forces here)
+
+% --- Tables ------------------------------------------------------------------
+\usepackage{booktabs}                % nicer table rules (\toprule, \midrule, \bottomrule)
+\usepackage{longtable}
+\usepackage{tabularx}                % flexible-width X columns
+
+% --- Bibliography (biblatex + biber) -----------------------------------------
+% APA style with Monash-friendly options:
+%   - et al. for 3+ authors in-text (maxcitenames=2)
+%   - last names only (uniquename=false; APA's default initials suppressed)
+%   - no author-list expansion to disambiguate (uniquelist=false)
+\usepackage[
+    backend=biber,
+    style=apa,
+    natbib=true,
+    sorting=nyt,
+    maxcitenames=2,
+    mincitenames=1,
+    maxbibnames=99,
+    uniquename=false,
+    uniquelist=false
+]{biblatex}
+\addbibresource{thesis.bib}
+
+% --- Hyperlinks (load late) --------------------------------------------------
+\usepackage[hidelinks,breaklinks=true]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}   % \Cref{...} for capitalised refs
+
+% --- Chapter / heading styling -----------------------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}
+  {\chaptertitlename\ \thechapter}{14pt}{\LARGE}
+
+% --- Table of contents styling -----------------------------------------------
+\usepackage{tocloft}
+
+% Chapter entries: roman, with breathing room between entries
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+\setlength{\cftbeforechapskip}{1.2em}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% TOC heading: large, bold, left-aligned
+\renewcommand{\cfttoctitlefont}{\Huge\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+% --- Custom macros (edit these for your thesis) -----------------------------
+\newcommand{\thesistitle}{Your thesis title here}
+\newcommand{\thesisauthor}{Your Name}
+\newcommand{\thesisyear}{2026}
+\newcommand{\thesisdegree}{Doctor of Philosophy}
+\newcommand{\thesisuniversity}{Monash University}
+\newcommand{\thesisdepartment}{Philosophy Department}
+\newcommand{\thesisschool}{School of Philosophical, Historical, and Indigenous Studies}
+\newcommand{\thesisfaculty}{Faculty of Arts}
+
+% =============================================================================
+\begin{document}
+
+% --- Front matter ------------------------------------------------------------
+\frontmatter
+
+\input{frontmatter/titlepage}
+\input{frontmatter/copyright}
+\input{frontmatter/abstract}
+
+\begingroup
+  \setcounter{tocdepth}{0}           % chapters only — no sections in TOC
+  \tableofcontents
+\endgroup
+\cleardoublepage
+
+\input{frontmatter/publications}
+\input{frontmatter/declaration}
+\input{frontmatter/acknowledgements}
+
+% --- Main matter -------------------------------------------------------------
+\mainmatter
+
+% Add your chapter inputs here in order. The convention is one .tex file
+% per chapter, named NN_short_title.tex so they sort cleanly in the
+% chapters/ directory.
+\input{chapters/01_introduction}
+\input{chapters/02_chapter_template}
+% \input{chapters/03_chapter_two}
+% \input{chapters/04_chapter_three}
+% ...
+\input{chapters/99_conclusion}
+
+% --- Back matter -------------------------------------------------------------
+\backmatter
+\printbibliography[heading=bibintoc,title={References}]
+
+\end{document}
