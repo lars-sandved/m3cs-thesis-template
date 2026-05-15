@@ -104,11 +104,11 @@
   {\normalfont\Large\bfseries}
   {\chaptertitlename\ \thechapter}{14pt}{\LARGE}
 
-% Ragged-right \section headings: prevents underfull \hbox warnings when a
-% long section title wraps onto a second short line that would otherwise be
-% stretched to the full line measure.
+% Section headings: \large (not \Large) keeps long titles on at most two
+% tight lines instead of three loose ones, and \raggedright prevents the
+% wrap from leaving an underfull \hbox.
 \titleformat{\section}
-  {\normalfont\Large\bfseries\raggedright}{\thesection}{1em}{}
+  {\normalfont\large\bfseries\raggedright}{\thesection}{1em}{}
 
 % --- Table of contents styling -----------------------------------------------
 \usepackage{tocloft}
