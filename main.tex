@@ -100,15 +100,22 @@
 
 % --- Chapter / heading styling -----------------------------------------------
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\normalfont\Large\bfseries}
-  {\chaptertitlename\ \thechapter}{14pt}{\LARGE}
 
-% Section headings: \large (not \Large) keeps long titles on at most two
-% tight lines instead of three loose ones, and \raggedright prevents the
-% wrap from leaving an underfull \hbox.
+% Heading sizes are one step smaller than LaTeX's book-class defaults:
+%   chapter label \large, chapter title \Large
+%   section       \large (default \Large)
+%   subsection    \normalsize (default \large)
+% \raggedright on \section and \subsection prevents wrapped long titles
+% from leaving underfull \hbox warnings.
+\titleformat{\chapter}[display]
+  {\normalfont\large\bfseries}
+  {\chaptertitlename\ \thechapter}{14pt}{\Large}
+
 \titleformat{\section}
   {\normalfont\large\bfseries\raggedright}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\raggedright}{\thesubsection}{1em}{}
 
 % --- Table of contents styling -----------------------------------------------
 \usepackage{tocloft}
