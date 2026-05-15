@@ -1,14 +1,54 @@
 % =============================================================================
 % Chapter template (rename this file to e.g. 02_first_paper.tex)
+% -----------------------------------------------------------------------------
+% Structure (Monash thesis-by-publication convention):
+%
+%   1. Linking text (bridges from the previous chapter), placed BEFORE the
+%      \chapter{} command so it sits between chapters in the rendered PDF.
+%      For the first paper-chapter (the one right after the Introduction),
+%      omit the linking text.
+%
+%   2. Chapter title + chaptermark + label.
+%
+%   3. Author byline (the co-authors of the published paper, with you
+%      first).
+%
+%   4. Abstract (verbatim from the published version).
+%
+%   5. The published paper itself, beginning with the Introduction.
 % =============================================================================
 
+% --- Linking text (omit on the first paper-chapter) -------------------------
+\section*{Linking text}
+
+[Your linking text goes here. The linking text bridges from the previous
+chapter to this one.]
+
+\clearpage
+
+% --- Chapter ---------------------------------------------------------------
 \chapter{Your chapter title}
 \chaptermark{Short title for running header}
 \label{ch:chapter-template}
 
-% Replace with your chapter content.
+% Author byline — co-authors of the published paper, in publication order
+\begin{center}
+\large [Your Name], [Co-author 1], [Co-author 2]
+\end{center}
 
-[Your chapter goes here.]
+\vspace{1em}
+
+% --- Abstract --------------------------------------------------------------
+\section*{Abstract}
+
+[Abstract of the published paper goes here.]
+
+\textbf{Keywords:} keyword1; keyword2; keyword3.
+
+\clearpage
+
+% --- Body of the paper -----------------------------------------------------
+[Your chapter content goes here.]
 
 % -----------------------------------------------------------------------------
 % Reference syntax examples (delete if not needed):
