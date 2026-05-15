@@ -83,6 +83,17 @@
 ]{biblatex}
 \addbibresource{thesis.bib}
 
+% Allow biblatex to break long URLs/DOIs across lines (lower penalty = more
+% eager to break). Prevents overfull \hbox in the bibliography from entries
+% with long urls or DOIs.
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+
+% Last-resort slack for paragraphs that won't break cleanly (bibliography
+% entries, long inline urls). Applied document-wide.
+\setlength{\emergencystretch}{3em}
+
 % --- Hyperlinks (load late) --------------------------------------------------
 \usepackage[hidelinks,breaklinks=true]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}   % \Cref{...} for capitalised refs
