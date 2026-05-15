@@ -3,40 +3,49 @@
 % -----------------------------------------------------------------------------
 % Edit the macros in main.tex (\thesistitle, \thesisauthor, etc.) rather
 % than editing this file directly. The Monash logo lives in figures/.
+%
+% The layout uses \vspace*{\fill} to push elements toward the top, middle
+% and bottom of the page. Tweak the \fontsize values if your title is
+% very long or very short.
 % =============================================================================
 \begin{titlepage}
-\centering
-\vspace*{2cm}
+    \centering
 
-% Monash logo (replace figures/monash_logo.png if you have a higher-res copy)
-\includegraphics[width=0.4\textwidth]{monash_logo.png}
+    % --- Monash wordmark ---
+    \includegraphics[width=0.85\linewidth]{monash_logo.png}
+    \par
+    \vspace*{\fill}
 
-\vfill
+    % --- Title ---
+    {\fontsize{32}{38}\selectfont\bfseries \thesistitle \par}
+    \vspace{2.5em}
 
-{\LARGE\bfseries \thesistitle \par}
-\vspace{2cm}
+    % --- Author ---
+    {\fontsize{22}{26}\selectfont\itshape \thesisauthor \par}
+    \vspace*{\fill}
 
-{\large \thesisauthor \par}
-\vspace{0.5cm}
+    % --- Degree block, ruled top and bottom ---
+    \begingroup
+        \rule{0.7\linewidth}{0.4pt}\par
+        \vspace{0.8em}
+        {\fontsize{16}{20}\selectfont
+            Thesis submitted for the degree of\\[0.3em]
+            \textbf{\thesisdegree}\\[0.3em]
+            at \thesisuniversity\ in \thesisyear
+            \par
+        }
+        \vspace{0.8em}
+        \rule{0.7\linewidth}{0.4pt}\par
+    \endgroup
+    \vspace*{\fill}
 
-{\normalsize ORCID: 0000-0000-0000-0000 \par} % replace with your ORCID
-
-\vfill
-
-{\normalsize
-A thesis submitted in fulfilment of the requirements for the degree of\\
-\thesisdegree
-\par}
-
-\vspace{1cm}
-
-{\normalsize
-\thesisschool\\
-\thesisfaculty\\
-\thesisuniversity\\
-\thesisyear
-\par}
-
-\vspace{2cm}
+    % --- Affiliation ---
+    {\fontsize{12}{16}\selectfont
+        \thesisdepartment\\
+        \thesisschool\\
+        \thesisfaculty, \thesisuniversity
+        \par
+    }
+    \vspace{1cm}
 \end{titlepage}
 \cleardoublepage
