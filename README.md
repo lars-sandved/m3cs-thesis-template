@@ -32,7 +32,51 @@ You should get a compiled `main.pdf` with placeholder content. Then:
 4. **Add your bib entries** to `thesis.bib`
 5. **Drop figures** into `figures/`
 
-For Overleaf: upload the whole repo as a project, then set `main.tex` as the main document and biber as the bibliography compiler.
+## Using the template with Overleaf
+
+Two routes, in order of convenience:
+
+### Option 1 — Import directly from GitHub (recommended)
+
+Overleaf can clone a public GitHub repo into a new project in one click:
+
+1. Sign in to [Overleaf](https://www.overleaf.com).
+2. From the project list page, click **New Project → Import from GitHub**.
+3. Paste the repo URL: `https://github.com/lars-sandved/m3cs-thesis-template`
+4. Click **Import to Overleaf**. The repo will appear as a new Overleaf project.
+
+The advantage of this route is that Overleaf keeps the link to GitHub. You can pull updates from GitHub and push your own changes back from Overleaf's project menu (**Menu → GitHub → Push to / Pull from GitHub**).
+
+If you'd rather decouple your thesis from this template entirely (most students will), fork the repo on GitHub first, then import your fork into Overleaf.
+
+### Option 2 — Upload as a zip
+
+If you don't want GitHub in the loop at all:
+
+1. From the repo page, click **Code → Download ZIP**.
+2. On Overleaf, click **New Project → Upload Project** and select the zip.
+
+### Overleaf project settings
+
+Once the project is in Overleaf, set:
+
+- **Menu → Compiler** → `LaTeX` (default) or `pdfLaTeX`
+- **Menu → Main document** → `main.tex`
+- **Menu → TeX Live version** → 2023 or later (for `biblatex-apa` to work)
+
+The bibliography uses `biber` (not `bibtex`). Overleaf auto-detects this from the `biblatex` package call in `main.tex` — no manual setting needed.
+
+### Compiling
+
+Click **Recompile** in the top toolbar. The first compile will be slow (it has to run biber and re-pdflatex twice). Subsequent compiles are faster.
+
+If citations show up as `[?]` after a first compile, click the arrow next to **Recompile** and select **Recompile from scratch**.
+
+### Tips
+
+- **Track changes with co-authors**: Overleaf's track changes feature is paid-only. If you want free track changes, use the GitHub workflow (Option 1) and use pull requests on your fork.
+- **Sharing**: from **Menu → Share**, you can invite supervisors as collaborators. Free Overleaf accounts allow one collaborator per project; paid accounts allow more.
+- **Backups**: even on Overleaf, periodically push to GitHub. Overleaf's history feature is limited on free accounts.
 
 ## File layout
 
