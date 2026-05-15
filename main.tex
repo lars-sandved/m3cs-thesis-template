@@ -155,6 +155,10 @@
   \tableofcontents
 \endgroup
 \cleardoublepage
+% \tableofcontents leaves "Contents" set as the running-head mark, which
+% then leaks onto subsequent front-matter pages (publications, declaration,
+% acknowledgements) until another \chapter resets it. Clear it explicitly.
+\markboth{}{}
 
 \input{frontmatter/publications}
 \input{frontmatter/declaration}
