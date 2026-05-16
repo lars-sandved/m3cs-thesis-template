@@ -51,6 +51,19 @@
 % --- Lists -------------------------------------------------------------------
 \usepackage{enumitem}                % flexible list formatting
 
+% --- Block quotes ------------------------------------------------------------
+% Left-adjusted (small left indent, no right indent, ragged right) and one
+% step smaller than body text. Any trailing \citep sits inline at the end of
+% the quote rather than on a separate right-aligned line.
+\renewenvironment{quote}
+  {\list{}{\listparindent=1.5em
+           \itemindent=\listparindent
+           \leftmargin=1.5em
+           \rightmargin=0pt
+           \parsep=0pt}%
+   \item\relax\small\raggedright}
+  {\endlist}
+
 % --- Graphics & figures ------------------------------------------------------
 \usepackage{graphicx}
 \graphicspath{{figures/}}            % all figures in figures/ subdirectory
