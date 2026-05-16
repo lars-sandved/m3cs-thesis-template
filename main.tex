@@ -125,11 +125,15 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}                                        % clear header & footer
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}   % leftmark = chapter title
+% leftmark = "Chapter N. Title" (no \chaptermark fires for \chapter*, so
+% front-matter pages stay clear).
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{}                  % no section in running head
-\fancyhead[L]{\nouppercase{\itshape\leftmark}}    % chapter title, top-left
+% Chapter running head, top-left, italic and greyed so it sits behind the
+% body text rather than competing with it.
+\fancyhead[L]{\nouppercase{\itshape\color{black!50}\leftmark}}
 \fancyfoot[C]{\thepage}                           % page number, bottom-centre
-\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0pt}                % no rule under running head
 \renewcommand{\footrulewidth}{0pt}
 % Chapter-opening and front-matter pages use \thispagestyle{plain}; keep
 % their page number bottom-centre too, with no header or rule.
