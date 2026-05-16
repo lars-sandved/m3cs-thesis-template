@@ -117,6 +117,29 @@
 \titleformat{\subsection}
   {\normalfont\normalsize\bfseries\raggedright}{\thesubsection}{1em}{}
 
+% --- Running heads & page numbers --------------------------------------------
+% Default book-class "headings" style puts the page number in the top corner
+% with the running head. Instead: chapter running head at top-left, page
+% number centred at the foot of every page (matches the chapter-opening
+% pages, which already used bottom-centre numbering).
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}                                        % clear header & footer
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}   % leftmark = chapter title
+\renewcommand{\sectionmark}[1]{}                  % no section in running head
+\fancyhead[L]{\nouppercase{\itshape\leftmark}}    % chapter title, top-left
+\fancyfoot[C]{\thepage}                           % page number, bottom-centre
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% Chapter-opening and front-matter pages use \thispagestyle{plain}; keep
+% their page number bottom-centre too, with no header or rule.
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
 % --- Table of contents styling -----------------------------------------------
 \usepackage{tocloft}
 
