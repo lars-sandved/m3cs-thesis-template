@@ -65,9 +65,10 @@ research.
 In the case of the paper-chapters of this thesis, my contribution to the work involved the following:
 
 % Extend the table 1.5cm into each margin so the 6 columns get more
-% breathing room. Total table width = \linewidth + 3cm.
+% breathing room. Total table width = \linewidth + 3cm. The wrapping
+% \makebox[\linewidth][c]{...} centres the (wider-than-\linewidth)
+% table on the body column with symmetric margin overflow.
 {\footnotesize
-\noindent\hspace*{-1.5cm}%
 % Grid-style table: vertical pipes between every column, \hline between
 % every row. No \hline above the header row, so the top of the black
 % header has no visible border (matches the Monash Word template).
@@ -75,6 +76,7 @@ In the case of the paper-chapters of this thesis, my contribution to the work in
 % Publication title at 0.85 (narrower), Nature/% student at 1.0,
 % Co-author at 1.15 (wider). Monash student fixed column bumped
 % from 1.1cm to 1.3cm.
+\noindent\makebox[\linewidth][c]{%
 \begin{tabularx}{\dimexpr\linewidth+3cm\relax}{|p{0.6cm}|>{\hsize=.85\hsize\raggedright\arraybackslash}X|p{1.4cm}|>{\hsize=1.0\hsize\raggedright\arraybackslash}X|>{\hsize=1.15\hsize\raggedright\arraybackslash}X|p{1.3cm}|}
 \rowcolor{black}
 \textcolor{white}{\textbf{Thesis chapter}} &
@@ -99,7 +101,8 @@ In the case of the paper-chapters of this thesis, my contribution to the work in
 
 % Add additional rows as needed.
 
-\end{tabularx}}
+\end{tabularx}%
+}}
 
 \bigskip
 
