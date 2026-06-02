@@ -68,16 +68,17 @@ In the case of the paper-chapters of this thesis, my contribution to the work in
 % breathing room. Total table width = \linewidth + 3cm.
 {\footnotesize
 \noindent\hspace*{-1.5cm}%
-\begin{tabularx}{\dimexpr\linewidth+3cm\relax}{@{}p{0.6cm} >{\raggedright\arraybackslash}X p{1.4cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X p{1.1cm}@{}}
-\toprule
+% Grid-style table: vertical pipes between every column, \hline between
+% every row. No \hline above the header row, so the top of the black
+% header has no visible border (matches the Monash Word template).
+\begin{tabularx}{\dimexpr\linewidth+3cm\relax}{|p{0.6cm}|>{\raggedright\arraybackslash}X|p{1.4cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|p{1.1cm}|}
 \rowcolor{black}
 \textcolor{white}{\textbf{Thesis chapter}} &
 \textcolor{white}{\textbf{Publication title}} &
 \textcolor{white}{\textbf{Status}} &
 \textcolor{white}{\textbf{Nature \& \% of student contribution}} &
 \textcolor{white}{\textbf{Co-author name(s); nature \& \% of co-author's contribution}} &
-\textcolor{white}{\textbf{Co-author, Monash student Y/N}} \\
-\midrule
+\textcolor{white}{\textbf{Co-author, Monash student Y/N}} \\ \hline
 % Replace each row with one of your paper-chapters.
 % Status options: Published / In press / Accepted or returned for revision / Submitted.
 % Use \newline inside a cell to start a new line within the same row.
@@ -90,12 +91,10 @@ In the case of the paper-chapters of this thesis, my contribution to the work in
 1) [First co-author name] --- [nature], [XX\%]\newline
 2) [Second co-author name] --- [nature], [XX\%] &
 1) [Y/N]\newline
-2) [Y/N] \\
-\addlinespace
+2) [Y/N] \\ \hline
 
 % Add additional rows as needed.
 
-\bottomrule
 \end{tabularx}}
 
 \bigskip
