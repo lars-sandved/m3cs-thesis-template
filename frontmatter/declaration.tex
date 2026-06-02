@@ -71,7 +71,11 @@ In the case of the paper-chapters of this thesis, my contribution to the work in
 % Grid-style table: vertical pipes between every column, \hline between
 % every row. No \hline above the header row, so the top of the black
 % header has no visible border (matches the Monash Word template).
-\begin{tabularx}{\dimexpr\linewidth+3cm\relax}{|p{0.6cm}|>{\raggedright\arraybackslash}X|p{1.4cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|p{1.1cm}|}
+% Column widths: \hsize weights on the three X columns must sum to 3.
+% Publication title at 0.85 (narrower), Nature/% student at 1.0,
+% Co-author at 1.15 (wider). Monash student fixed column bumped
+% from 1.1cm to 1.3cm.
+\begin{tabularx}{\dimexpr\linewidth+3cm\relax}{|p{0.6cm}|>{\hsize=.85\hsize\raggedright\arraybackslash}X|p{1.4cm}|>{\hsize=1.0\hsize\raggedright\arraybackslash}X|>{\hsize=1.15\hsize\raggedright\arraybackslash}X|p{1.3cm}|}
 \rowcolor{black}
 \textcolor{white}{\textbf{Thesis chapter}} &
 \textcolor{white}{\textbf{Publication title}} &
