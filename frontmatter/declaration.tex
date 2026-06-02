@@ -64,9 +64,11 @@ research.
 % Update chapter range to whatever your paper-chapters are (e.g. ch:dcnp to ch:conclusion).
 In the case of the paper-chapters of this thesis, my contribution to the work involved the following:
 
-\begin{center}
+% Extend the table 1.5cm into each margin so the 6 columns get more
+% breathing room. Total table width = \linewidth + 3cm.
 {\footnotesize
-\begin{tabularx}{\linewidth}{@{}p{0.6cm} >{\raggedright\arraybackslash}X p{1.4cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X p{1.1cm}@{}}
+\noindent\hspace*{-1.5cm}%
+\begin{tabularx}{\dimexpr\linewidth+3cm\relax}{@{}p{0.6cm} >{\raggedright\arraybackslash}X p{1.4cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X p{1.1cm}@{}}
 \toprule
 \textbf{Thesis chapter} &
 \textbf{Publication title} &
@@ -94,7 +96,6 @@ In the case of the paper-chapters of this thesis, my contribution to the work in
 
 \bottomrule
 \end{tabularx}}
-\end{center}
 
 \bigskip
 
