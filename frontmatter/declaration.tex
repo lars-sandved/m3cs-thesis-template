@@ -2,12 +2,25 @@
 % Thesis including published works declaration
 % -----------------------------------------------------------------------------
 % This is the standard Monash declaration form for thesis-by-publication
-% submissions. It must include:
-%   1. The originality declaration (top paragraph — preserve as-is)
-%   2. The thesis-by-publication framing (second paragraph — edit theme)
-%   3. A per-chapter contributions table
-%   4. Student signature + date
-%   5. Supervisor signature + date
+% submissions. It must include (matches the Monash Feb-2026 template):
+%   1. The originality declaration (top paragraph — preserve verbatim)
+%   2. The thesis-by-publication framing (second paragraph — edit theme,
+%      number of published vs submitted papers, and supervisor name)
+%   3. The "active collaboration" paragraph — REMOVE if your thesis is
+%      entirely sole-authored (per the Monash template instruction)
+%   4. The 6-column per-chapter contributions table, listing for every
+%      paper-chapter:
+%        - Thesis chapter number (use the actual chapter number, not 1..N)
+%        - Publication title
+%        - Status: published / in press / accepted or returned for revision
+%          / submitted
+%        - Nature and % of YOUR contribution
+%        - Co-author name(s); for each co-author: nature and % of their
+%          contribution
+%        - For each co-author: Monash student Y/N
+%   5. The "I have / have not renumbered sections" statement
+%   6. Student signature + date
+%   7. Supervisor signature + date
 %
 % Signatures: scan or photograph and save as figures/student_signature.jpg
 % and figures/supervisor_signature.jpg (or .png). Sized to 1.2cm height
@@ -25,8 +38,12 @@ where due reference is made in the text of the thesis.
 
 \bigskip
 
-This thesis includes original papers published in peer reviewed journals and
-preprints currently under review. The core theme of the thesis is
+This thesis includes
+% [REPLACE: number] original papers published in peer reviewed journals and
+% [REPLACE: number] submitted publications.
+[N] original papers published in peer reviewed journals and [N] submitted
+publications.
+The core theme of the thesis is
 % [REPLACE: one-sentence description of the thesis's core theme.]
 [a short description of your thesis's core theme].
 The ideas, development and writing up of all the papers in the thesis were the
@@ -37,29 +54,53 @@ principal responsibility of myself, the student, working within the
 
 \bigskip
 
+% [REMOVE this paragraph if your thesis is entirely sole-authored.]
 The inclusion of co-authors reflects the fact that the work came from active
 collaboration between researchers and acknowledges input into team-based
-research. Per-chapter contribution details are summarised in the table below.
+research.
 
 \bigskip
 
+% Update chapter range to whatever your paper-chapters are (e.g. ch:dcnp to ch:conclusion).
 In the case of the paper-chapters of this thesis, my contribution to the work involved the following:
 
 \begin{center}
-\begin{tabularx}{\linewidth}{@{}c >{\raggedright\arraybackslash}X l r@{}}
+{\footnotesize
+\begin{tabularx}{\linewidth}{@{}p{0.6cm} >{\raggedright\arraybackslash}X p{1.4cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X p{1.1cm}@{}}
 \toprule
-\textbf{Ch.} & \textbf{Publication title} & \textbf{Status} & \textbf{\% of contribution} \\
+\textbf{Thesis chapter} &
+\textbf{Publication title} &
+\textbf{Status} &
+\textbf{Nature \& \% of student contribution} &
+\textbf{Co-author name(s); nature \& \% of co-author's contribution} &
+\textbf{Co-author, Monash student Y/N} \\
 \midrule
-% Add one row per chapter that corresponds to a publication.
-% Status: Published / Preprint / Unpublished.
-1   & [Your chapter 1 title here] & Status & XX\% \\
+% Replace each row with one of your paper-chapters.
+% Status options: Published / In press / Accepted or returned for revision / Submitted.
+% Use \newline inside a cell to start a new line within the same row.
+% For sole-authored chapters: put `---' in the co-author columns.
+
+2 &
+[Chapter 2 publication title] &
+[Status] &
+[XX\%]. [Nature of your contribution, e.g. concept, theoretical development, simulations, drafting and revision of the manuscript] &
+1) [First co-author name] --- [nature], [XX\%]\newline
+2) [Second co-author name] --- [nature], [XX\%] &
+1) [Y/N]\newline
+2) [Y/N] \\
 \addlinespace
-2   & [Your chapter 2 title here] & Status & XX\% \\
-\addlinespace
-% etc.
+
+% Add additional rows as needed.
+
 \bottomrule
-\end{tabularx}
+\end{tabularx}}
 \end{center}
+
+\bigskip
+
+% Strike out whichever of "have" / "have not" does not apply.
+I have not renumbered sections of submitted or published papers in order to
+generate a consistent presentation within the thesis.
 
 \bigskip
 
